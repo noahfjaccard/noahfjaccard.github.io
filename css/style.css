@@ -1,0 +1,191 @@
+header{
+  padding-top: 1em;
+  text-align: center;
+  width: 450px;
+  margin: 8em auto;
+  height: 80vh;
+  margin-top: 5em;
+  background-color: #B7B7B7;
+  border-radius: 25px;
+}
+
+header h1{
+  font-family: 'Roboto', sans-serif;
+}
+
+header p{
+  font-family: 'Droid Serif', sans-serif;
+}
+
+header img{
+  border-style: solid;
+  border-radius: 3px;
+  border-color: #848484;
+  margin-bottom: 2em;
+  border-radius: 25px;
+}
+
+.caption{
+  margin-right: 0;
+  margin-top: -1.5em;
+  padding-bottom: 2em;
+}
+
+header h1{
+  color: #515151;
+  font-size: 42px;
+}
+
+nav a{
+  text-decoration: none;
+  text-align: center;
+  margin: 0;
+  display: inline-block;
+  width: 5.5em;
+  color: #515151;
+  background-color: #AAAAAA;
+}
+
+nav a:visited{
+  text-decoration: none;
+  text-align: center;
+  margin: 0;
+  display: inline-block;
+  width: 5.5em;
+}
+
+nav a:hover{
+  color: white;
+  background-color: #5B5B5B
+}
+
+nav{
+  font-family: 'Roboto', sans-serif;
+  position: fixed;
+  top: 0;
+  left: 0;
+  background-color: #EAEAEA;
+  width: 100%;
+}
+
+nav ul{
+  list-style: none;
+  margin: 0;
+  font-size: 2em;
+  display: flex;
+  justify-content: space-around;
+  border-bottom: 2px solid #848484;
+}
+
+h2{
+  font-size: 36px;
+}
+
+#education{
+  grid-area: education;
+}
+
+main h2{
+  text-align: center;
+}
+
+main article{
+  margin: 1em;
+}
+
+#education{
+  grid-area: education;
+}
+
+#title{
+  grid-area: title;
+}
+
+#brewbike{
+  grid-area: brewbike;
+}
+
+#starbucks{
+  grid-area: starbucks;
+}
+
+#carrols{
+  grid-area: carrols;
+}
+
+#kilwins{
+  grid-area: kilwins;
+}
+
+#experience{
+  grid-area: experience;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  /* grid-gap: 20px; */
+  grid-template:
+  "title title"
+  "brewbike starbucks"
+  "carrols kilwins";
+  border-radius: 25px;
+}
+
+#skills{
+  grid-area: skills;
+}
+
+main {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  padding: 20px;
+  /* grid-template-rows: 800px 800px; */
+  grid-gap: 20px;
+  grid-template:
+  "education experience experience"
+  "skills experience experience";
+  color: #5B5B5B;
+  font-size: 18px;
+  background-color: #EAEAEA;
+  border-radius: 25px;
+}
+
+main h2{
+  font-family: 'Roboto', sans-serif;
+}
+
+main h3,
+p{
+  font-family: 'Droid Serif', sans-serif;
+}
+
+main a,
+main a:visited,
+footer a,
+footer a:visited{
+  text-decoration: none;
+  color: #5B5B5B;
+}
+
+main a:hover,
+footer a:hover{
+  color: #F4F4F4;
+}
+
+section{
+  background-color: #C1C1C1;
+  border-radius: 25px;
+}
+
+article{
+  background-color: #B7B7B7;
+}
+
+p,
+h3{
+  margin-left: 5px;
+}
+
+footer{
+  text-align: center;
+  padding-top: 2em;
+  padding-bottom: 1em;
+}

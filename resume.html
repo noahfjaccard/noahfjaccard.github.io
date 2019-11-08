@@ -3,25 +3,39 @@
   <head>
     <meta charset="utf-8">
     <title>Noah Jaccard's Résumé</title>
+    <link href="css/style.css" rel="stylesheet"/>
   </head>
 
-  <body id="top">
-    <header>
+  <div id="backToTop">
+    <p>toppy</p>
+  </div>
+
+  <body>
+    <header id="header">
       <h1>Noah Jaccard</h1>
       <img src="noahjaccard.jpg" alt="A Photo of Noah Jaccard sitting on a cliff.">
-      <p>I own the rights to this photo.<p>
+      <p class="caption">I own the rights to this photo.<p>
       <p>350 White ***** Lane, Severna Park, MD, 21146</p>
       <p>950 ********* Avenue, Coral Gables, FL, 33146</p>
       <p>University of Miami, Florida</p>
       <p>***-***-6597 | nfj5@*****.edu</p>
     </header>
 
+    <nav>
+      <ul>
+        <li><a href="#backToTop">Top</a></li>
+        <li><a href="#education">Education</a></li>
+        <li><a href="#experience">Experience</a></li>
+        <li><a href="#skills">Skills</a></li>
+      </ul>
+    </nav>
+
     <main>
-      <section>
+      <section id="education">
         <h2>Education</h2>
 
         <article>
-          <h3>Univeristy of Miami</h3>
+          <h3><a href="https://welcome.miami.edu/">Univeristy of Miami</a></h3>
           <p><strong>Coral Gables, Florida</strong></p>
           <p><em>Working Bachelor of Science in Computer Science</em></p>
           <ul>
@@ -32,20 +46,22 @@
         </article>
       </section>
 
-      <section>
-        <h2>Work and Leadership Experience</h2>
+      <section id="experience">
+        <h2 id="title">Work and Leadership Experience</h2>
 
-        <article>
+        <article id="brewbike">
           <h3><a href="https://brewbikecoffee.com/">BrewBike</a></h3>
           <p><strong>Univeristy of Miami, Florida</strong></p>
-          <p><em>Barista Brewer, 8/19 - Present</em></p>
+          <p><em>Front of House Manager, 8/19 - Present</em></p>
           <ul>
             <li>Growing the company by spreading the coffee.</li>
             <li>Batch and brewing skills when crafting the cold brew.</li>
+            <li>Recently promoted to Front of House Manager.</li>
+            <li>Covers all the training and helps with scheduling and payment of employees.</li>
           </ul>
         </article>
 
-        <article>
+        <article id="starbucks">
           <h3><a href="https://www.starbucks.com/">Starbucks</a></h3>
           <p><strong>Severna Park, Maryland</strong></p>
           <p><em>Barista, 1/18 - Present</em></p>
@@ -58,7 +74,7 @@
           </ul>
         </article>
 
-        <article>
+        <article id="carrols">
           <h3><a href="https://carrolscreek.com/">Carrol's Creek Cafe</a></h3>
           <p><strong>Annapolis, Maryland</strong></p>
           <p><em>Wait Staff, 5/19 - 8/19</em></p>
@@ -69,7 +85,7 @@
           </ul>
         </article>
 
-        <article>
+        <article id="kilwins">
           <h3><a href="https://www.kilwins.com/stores/kilwins-annapolis">Kilwins of Annapolis</a></h3>
           <p><strong>Annapolis, Maryland</strong></p>
           <p><em>Kitchen Cook, 10/16 - 12/17</em></p>
@@ -82,7 +98,7 @@
         </article>
       </section>
 
-      <section>
+      <section id="skills">
         <h2>Skills, Activities, and Interests</h2>
         <article><p><strong>Skills:</strong> Communication, Public Speaking, Leadership, Multitasking, Planning, American Sign</p></article>
         <article><p><strong>Technical Skills:</strong> Java, C++, HTML, Python, JavaScript, C, Unix</p></article>
@@ -95,7 +111,6 @@
 
     <footer>
       <p>Everything in here belongs to Noah Jaccard</p>
-      <p><a href="#top">Back to Top: Experience the magic again!</a></p>
     </footer>
   </body>
 </html>
