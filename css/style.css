@@ -133,6 +133,28 @@ main article{
   grid-area: skills;
 }
 
+@media(max-width: 768px) {
+  #grid{
+    grid-template-columns: 1fr;
+    grid-template:
+    "education"
+    "experience"
+    "skills";
+  }
+}
+
+@media(max-width: 768px) {
+  #experience {
+    grid-template-columns: 1fr;
+    grid-template:
+    "title"
+    "brewbike"
+    "starbucks"
+    "carrols"
+    "kilwins";
+  }
+}
+
 main {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
@@ -140,6 +162,7 @@ main {
   /* grid-template-rows: 800px 800px; */
   grid-gap: 20px;
   grid-template:
+  "title title title"
   "education experience experience"
   "skills experience experience";
   color: #5B5B5B;
