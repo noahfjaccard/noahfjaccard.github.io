@@ -2,10 +2,9 @@
 #resume header{
   padding-top: 1em;
   text-align: center;
-  width: 450px;
+  width: 50%;
   margin: 8em auto;
-  height: 80vh;
-  margin-top: 5em;
+  padding-bottom: 2em;
   background-color: #B7B7B7;
   border-radius: 25px;
 }
@@ -14,19 +13,22 @@
 #journal header{
   padding: 0 1em;
   text-align: center;
-  margin: 8em auto;
+  margin: 5em auto 3em auto;
   background-color: #B7B7B7;
   font-size: 20px;
   max-width: 10em;
   border-radius: 25px;
 }
 
-header h1{
+h1,
+h2,
+h3,
+h4{
   font-family: 'Roboto', sans-serif;
 }
 
-header p{
-  font-family: 'Droid Serif', sans-serif;
+p{
+  font-family: 'Droid Serif', serif;
 }
 
 nav a{
@@ -37,12 +39,12 @@ nav a{
   width: 5.5em;
   color: #515151;
   background-color: #FFFFFF;
+  /* border-radius: 25px; */
 }
 
 nav a:visited{
   text-decoration: none;
   text-align: center;
-  margin: 0;
   display: inline-block;
   width: 5.5em;
 }
@@ -54,21 +56,23 @@ nav a:hover{
 
 nav{
   font-family: 'Roboto', sans-serif;
-  font-size: 24px;
   position: fixed;
   top: 0;
   left: 0;
   background-color: #EAEAEA;
   width: 100%;
+  border-radius: 25px;
 }
 
 nav ul{
   list-style: none;
   margin: 0;
-  font-size: 2em;
+  font-size: 2.5em;
   display: flex;
   justify-content: space-around;
   border-bottom: 2px solid #848484;
+  border-radius: 25px;
+  padding-left: .1em;
 }
 
 
@@ -86,7 +90,6 @@ main article{
 }
 
 #index header p{
-    margin-top: 4em;
     padding: 2em;
 }
 
@@ -126,6 +129,54 @@ main article{
   grid-area: kilwins;
 }
 
+#friends #title{
+  grid-area: title;
+}
+
+#friends #disc{
+  grid-area: disc;
+}
+
+#friends #addy{
+  grid-area: addy;
+}
+
+#friends #sam{
+  grid-area: sam;
+}
+
+#friends #aidan{
+  grid-area: aidan;
+}
+
+#friends #savannah{
+  grid-area: savannah;
+}
+
+#friends #kurt{
+  grid-area: kurt;
+}
+
+#friends #andrew{
+  grid-area: andrew;
+}
+
+#friends #katie{
+  grid-area: katie;
+}
+
+#friends #enjolie{
+  grid-area: enjolie;
+}
+
+#friends #natalie{
+  grid-area: natalie;
+}
+
+#resume #skills{
+  grid-area: skills;
+}
+
 .caption{
   padding-bottom: 2em;
 }
@@ -140,6 +191,23 @@ main article{
   text-align: center;
 }
 
+#index img{
+  display: block;
+  margin: 0 auto;
+  border: 2px solid black;
+  border-radius: 25px;
+  max-width: 90%;
+}
+
+#index main p{
+  display: block;
+  margin: 1em auto;
+  text-align: center;
+  background-color: gray;
+  border-radius: 25px;
+  max-width: 15em;
+}
+
 #resume #experience{
   grid-area: experience;
   display: grid;
@@ -150,32 +218,6 @@ main article{
   "brewbike starbucks"
   "carrols kilwins";
   border-radius: 25px;
-}
-
-#resume #skills{
-  grid-area: skills;
-}
-
-@media(max-width: 768px) {
-  #resume #resumegrid{
-    grid-template-columns: 1fr;
-    grid-template:
-    "education"
-    "experience"
-    "skills";
-  }
-}
-
-@media(max-width: 768px) {
-  #resume #experience {
-    grid-template-columns: 1fr;
-    grid-template:
-    "title"
-    "brewbike"
-    "starbucks"
-    "carrols"
-    "kilwins";
-  }
 }
 
 #resume main {
@@ -193,14 +235,142 @@ main article{
   border-radius: 25px;
 }
 
+#friends main{
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: 1em .5em auto;
+  grid-gap: 20px;
+  grid-template:
+  "title title title"
+  "disc disc disc"
+  "sam addy aidan"
+  "sav andrew kurt"
+  "natalie katie enjolie";
+  background-color: #EAEAEA;
+  border-radius: 25px;
+  padding: 1em;
+}
+
+#friends section{
+  padding: 1em;
+  background-color: lightgray;
+  border-radius: 25px;
+}
+
+#friends section h3{
+  text-align: center;
+}
+
+#friends #title,
+#friends #disc{
+  text-align: center;
+}
+
+#journal{
+  text-align: center;
+}
+
+#journal section{
+  padding: .5em;
+  background-color: #EAEAEA;
+  border-radius: 25px;
+}
+
+#journal article{
+  padding: .5em;
+  background-color: #D4D4D4;
+  border-radius: 25px;
+}
+
+#journal div{
+  padding: .5em;
+  background-color: #C2C2C2;
+  border-radius: 25px;
+}
+
 body{
   background-image: url("../img/background01.jpg");
   background-repeat: repeat;
   background-size: auto;
 }
 
+img{
+  border: 2px solid black;
+}
+
+#friends img{
+  display: block;
+  margin: 0 auto;
+  border: 2px solid black;
+  max-width: 200px;
+  border-radius: 25px;
+}
+
+@media(max-width: 800px) {
+  #index header,
+  #resume header{
+    width: 90%;
+  }
+
+  body{
+    padding-top: 2em;
+  }
+
+  nav a{
+    margin: 0;
+    margin-right: .1em;
+    padding: 1em 0;
+    width: 3.75em;
+    border-radius: 25px;
+    border: 1px solid black;
+  }
+
+  nav ul{
+    font-size: 1.5em;
+  }
+
+
+  #resume #resumegrid{
+    grid-template-columns: 1fr;
+    grid-template:
+    "education"
+    "experience"
+    "skills";
+  }
+
+  #resume #experience {
+    grid-template-columns: 1fr;
+    grid-template:
+    "title"
+    "brewbike"
+    "starbucks"
+    "carrols"
+    "kilwins";
+  }
+
+  #friends main{
+    grid-template-columns: 1fr;
+    grid-template:
+    "title"
+    "disc"
+    "addy"
+    "sam"
+    "aidan"
+    "sav"
+    "andrew"
+    "kurt"
+    "katie"
+    "enjolie"
+    "natalie";
+  }
+}
+
 footer{
   text-align: center;
-  padding-top: 2em;
-  padding-bottom: 1em;
+  display: block;
+  margin: 2em auto;
+  padding: 1em;
+  background-color: white;
+  border-radius: 25px;
+  max-width: 90%;
 }
