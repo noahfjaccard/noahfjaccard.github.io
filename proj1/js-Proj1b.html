@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta>
+    <title>Number Builder</title>
+    <script>
+
+      a = new Array ("field1",
+          "field2",
+          "field3",
+          "field4",
+          "field5",
+          "field6",
+          "field7",
+          "field8",
+          "field9",
+          "field10",
+          "field11" )
+
+        b = new Array ( 1, 2, 4, 8, 16, 32, 64, 128, 256, 512, 1024 )
+
+        // var pic = document.getElementById("pic")
+        // pic.style.display = "none"
+
+        function compute() {
+          sum = 0
+          var checkBox = null
+          for (i=0; i<b.length; i++){
+            checkBox = document.NumberBuilder[a[i]]
+            // if(document.NumberBuilder[a[i]].checked){
+            if(checkBox.checked == true){
+              sum = sum + b[i]
+            }
+          }
+          document.NumberBuilder.theResult.value = sum
+
+          if(document.NumberBuilder.theResult.value == 1925){
+            document.getElementById("pic").style.display = "block"
+        } else {
+          document.getElementById("pic").style.display = "none"
+        }
+      }
+    </script>
+  </head>
+  <body>
+    <form name="NumberBuilder">
+      <h2>Number Builder</h2>
+      <p>Select numbers to include to reach a total of 1925 for a surprise</p>
+      <p><strong>Enter some numbers</strong></p>
+      <menu>
+        <table>
+          <script>
+            function makeCheckbox ( i ) {
+              document.write('<input type=checkbox name="', a[i], '"  onClick=compute()>')
+            }
+
+            for(i=0; i<a.length; i++){
+              document.write("<tr><td>")
+              makeCheckbox(i);
+              document.write("</td><td>", b[i], "</td></tr>")
+            }
+
+            document.write('<tr><td colspan=2>------------</td></tr>')
+            document.write('<tr><td><input type=text name="theResult" size=4 value=0>')
+            document.write('</td><td>Total</td></tr>')
+          </script>
+        </table>
+      </menu>
+    </form>
+    <div id="pic">
+      <img src="../img/um.jpeg" alt="a beautful picture of UM">
+    </div>
+    <script>
+      document.getElementById("pic").style.display = "none"
+    </script>
+  </body>
+  <footer> <a href="../index.html">Home Page</a></footer>
+</html>
