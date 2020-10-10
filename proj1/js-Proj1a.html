@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>
+      Enter Name
+    </title>
+    <script>
+    function makeName() {
+      document.EnterName.Greeting.value =
+        document.EnterName.greetings.value + document.EnterName.givenName.value + "!";
+    }
+    </script>
+  </head>
+  <body>
+    <h2>Enter Name</h2>
+    <form name="EnterName">
+      <table>
+        <tbody>
+          <tr>
+            <td><strong>1)</strong></td>
+            <td>Enter your name:</td>
+            <td>
+              <input type="text" name="givenName" size="40">
+            </td>
+          </tr>
+          <tr>
+            <td><strong>2)<strong></td>
+            <td>Choose a greeting:</td>
+            <td>
+              <select class="greetings" name="greetings">
+                <option value="Hey There ">Hey there</option>
+                <option value="Hi What's up ">Hi! What's up</option>
+                <option value="Greetings ">Greetings</option>
+                <option value="Sorry this is late, good to see you ">Sorry this is late, good to see you </option>
+              </select>
+            </td>
+          </tr>
+
+          <tr>
+            <td><strong>3)</strong></td>
+            <td>Click here:</td>
+            <td>
+              <input type="button" Value="Click" onclick="makeName()">
+            </td>
+          </tr>
+          <tr>
+            <td><strong>4)</strong></td>
+            <td>Results:</td>
+            <td>
+              <input type="text" name="Greeting" size="40">
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </form>
+  </body>
+  <footer> <a href="../index.html">Home Page</a></footer>
+</html>

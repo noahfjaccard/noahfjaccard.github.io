@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+  <meta charset="utf-8">
+  <title>CSC401 Proj2</title>
+  <style >
+    body{
+      font-family: Arial, Helvetica, sans-serif;
+      padding-left: 4em;
+      padding-top: 2em;
+      background-color: #85DCBC;
+
+    }
+    .buttons{
+      padding-left: 6.5em;
+      padding-top: 1em;
+    }
+    .sizingButtons{
+      padding-left: 9em;
+      padding-top: 1em;
+      padding-bottom: 1em;
+    }
+    body p{
+      font-family: "Times New Roman", Times, serif;
+    }
+    table{
+      border: solid;
+      font-size: 20px;
+      border-color: #E8A87C;
+      border-radius: 1em;
+      padding: .5em;
+      background: #E27D60
+
+    }
+    #pseudoTable{
+      font-size: 20px;
+      padding: .5em;
+      margin-left: .5em;
+    }
+    .sizing{
+      margin-bottom: 2em;
+    }
+    .array{
+      margin-left: 4.5em;
+    }
+    td{
+      padding: .5em;
+    }
+  </style>
+<script type="text/javascript">
+var n = 10;
+var ticker = 0;
+var current = 0;
+var currentHighlight = 2;
+var randNum = 0;
+</script>
+</head>
+<body>
+  <h1>Randomize-In-Place Algorithm</h1>
+  <h2>by Noah Jaccard</h2>
+  <p>I am so sorry it probably won't be pretty, but it'll work!</p>
+  <p></p>
+  <div class="buttons">
+    <button type="button" name="button" onclick="nextStep()">Next Step!</button>
+    <button type="button" name="button" onclick="resetAlgo()">Restart It!</button>
+  </div>
+  <p></p>
+  <div class="sizingButtons">
+    <button type="button" name="button" onclick="nPlusPlus()">n++</button>
+    <button type="button" name="button" onclick="nMinMin()">n--</button>
+  </div>
+  <p></p>
+  <div class="sizing">
+    <table>
+      n = <tr id="nSize"><td>30</td></tr>
+    </table>
+  </div>
+  <p></p>
+  <div class="array">
+    <table id="array1">
+    </table>
+  </div>
+  <div class="data">
+    <h1>Pseudocode for Randomize</h1>
+    <table id="pseudoTable">
+      <tr id="init"><td>n = array length</td></tr>
+      <tr><td>for i = 0 -> n</td><tr>
+      <tr id="pseudo"><td>swap the ith array</td><td>with</td><td>random selection</td></tr>
+    </table>
+  </div>
+  <script type="text/javascript">
+  var table = document.getElementById("array1");
+  var row = table.insertRow();
+  console.log(row.childNodes);
+
+  for(i = 0; i < n; i++){
+    var cell = row.insertCell(-1);
+    cell.innerHTML = i+1;
+  }
+
+  var data = row.childNodes;
+  // var oneMore = data[0].innerHTML;
+  console.log(data[0]);
+
+
+
+
+  //var table = document.getElementById("array1");
+  var pseudo = document.getElementById("pseudo");
+  var initial = document.getElementById("init");
+  var sizeN = document.getElementById("nSize");
+  console.log(table);
+
+  sizeN.childNodes[0].innerHTML = n;
+
+  function start(resetter){
+
+    for(i = 0; i < n; i++){
+      console.log(table);
+      data[i].innerHTML = i+1;
+    }
+
+    if(!resetter){
+      initial.childNodes[0].style.background = "#31C393";
+      initial.childNodes[0].style.borderRadius = "2em";
+    }else {
+      initial.childNodes[0].style.background = 'none';
+    }
+  }
+
+  function randomize(randNum){
+    console.log(randNum);
+
+    var indexed = data[current].innerHTML;
+    var randInd = data[randNum].innerHTML;
+
+    if(!(current >= data.length)){
+      data[current].innerHTML = randInd;
+      data[randNum].innerHTML = indexed;
+    }
+
+    numHighlight(randNum, false);
+  }
+
+  function numHighlight(randSlot, resetter){
+    for(i = 0; i < n; i++){
+      data[i].style.background = 'none';
+    }
+    if(!resetter){
+      data[current].style.background = "#41B3A3";
+      data[current].style.borderRadius = "5em";
+      data[randSlot].style.background = "#C38D9E";
+      data[randSlot].style.borderRadius = "5em";
+    }
+  }
+
+
+  function pseudoHighlight(resetter){
+    pseudo.childNodes[0].style.background = 'none';
+    pseudo.childNodes[2].style.background = 'none';
+
+    //this highlights the pseudocode
+    if(!resetter){
+      if(currentHighlight != 1){
+        pseudo.childNodes[currentHighlight].style.background = "#41EFA3";
+        pseudo.childNodes[currentHighlight].style.borderRadius= "5em";
+      }
+
+      currentHighlight+=2;
+      if(currentHighlight >= pseudo.childNodes.length){
+        currentHighlight = 0;
+      }
+    }
+
+    // //this highlights the number (for no reason)
+    // for(i = 0; i < n; i++){
+    //   if(i < z){
+    //     table.childNodes[i].style.background = 'red';
+    //     // pseudo.childNodes[(i%3)].style.background = 'red';
+    //   }else{
+    //     table.childNodes[i].style.background = 'none';
+    //     // pseudo.childNodes[(i%3)].style.background = 'none';
+    //   }
+    //   // pseudo.childNodes[(i%3)].style.background = 'none';
+    // }
+  }
+
+  function nPlusPlus(){
+    n++;
+    sizeN.childNodes[0].innerHTML = n
+    var cell = row.insertCell(-1);
+    cell.innerHTML = n;
+  }
+
+  function nMinMin(){
+    n--;
+    sizeN.childNodes[0].innerHTML = n
+    row.deleteCell(-1);
+  }
+
+  function nextStep(){
+    if(ticker == 0){
+      start(false);
+    }else if(ticker == 1){
+      randNum = Math.floor(Math.random() * (n - (current+1)) + (current+1));
+      if(!(randNum >= n)){
+        numHighlight(randNum, false);
+        pseudoHighlight(false);
+      }
+    }else if(ticker == 2){
+      if(!(randNum >= n)){
+        randomize(randNum);
+        current++;
+        pseudoHighlight(false);
+      }
+    }
+    ticker++;
+    if (ticker >= 3) {
+      ticker = 1;
+    }
+  }
+
+  function resetAlgo(){
+    current = 0;
+    currentHighlight = 2;
+    ticker = 0;
+    start(true);
+
+    for(i = 0; i < n; i++){
+      data[i].innerHTML = i+1;
+    }
+    numHighlight(-1, true);
+    pseudoHighlight(true);
+  }
+</script>
+</body>
+<footer> <a href="../index.html">Home Page</a></footer>
+</html>
