@@ -32,13 +32,16 @@ p{
 }
 
 nav a{
+  font-size: 20px;
   text-decoration: none;
   text-align: center;
-  margin: 0;
+  /* margin: 0; */
+  padding-top: .9em;
+  padding-bottom: 1em;
   display: inline-block;
-  width: 5.5em;
+  width: 6em;
   color: #515151;
-  background-color: #FFFFFF;
+  /* background-color: #FFFFFF; */
   /* border-radius: 25px; */
 }
 
