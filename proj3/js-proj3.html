@@ -48,6 +48,10 @@
             working = false;
           }else{
             index++;
+            if(index >= n){
+              resetAlgo();
+              index = 0;
+            }
           }
         }
       }
