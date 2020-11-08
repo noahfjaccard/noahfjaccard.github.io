@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Hash Function Visual Algo</title>
+    <style>
+      td{
+        border: solid;
+        padding: 2em;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Hash Function Visual Algo</h1>
+    <div class="array">
+      <table id="array1">
+      </table>
+    </div>
+    <h2>Give a number!</h2>
+    <input type="text" id="numInput" size="20">
+    <div class="buttons">
+      <button type="button" name="button" onclick="inputNumber()">Insert Number!</button>
+      <button type="button" name="button" onclick="resetAlgo()">Restart It!</button>
+    </div>
+    <script type="text/javascript">
+      var n = 16;
+      var table = document.getElementById("array1");
+      var row = table.insertRow();
+      console.log(row.childNodes);
+
+      for(i = 0; i < n; i++){
+        var cell = row.insertCell(-1);
+        cell.innerHTML = null;
+      }
+
+      var data = row.childNodes;
+
+      function inputNumber(){
+        var index = 0;
+        var inp = 0;
+        var working = true;
+        inp = parseInt(document.getElementById("numInput").value);
+        while(working){
+          hashedNum = mainHash(inp, index);
+          console.log(hashedNum);
+          if(data[hashedNum].innerHTML == ""){
+            data[hashedNum].innerHTML = inp;
+            working = false;
+          }else{
+            index++;
+          }
+        }
+      }
+
+      function resetAlgo(){
+        for(var ind = 0; ind < n; ind++){
+          data[ind].innerHTML = null;
+        }
+        document.getElementById("numInput").value = "";
+      }
+
+      function mainHash(key, i){
+        return (((hash1(key) + i * (hash2(key))) % 16));
+      }
+
+      function hash1(key){
+        return (key % 16);
+      }
+
+      function hash2(key){
+        return (2 * (key % 4) + 1);
+      }
+
+    </script>
+  </body>
+</html>
