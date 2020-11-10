@@ -4,9 +4,12 @@
     <meta charset="utf-8">
     <title>Hash Function Visual Algo</title>
     <style>
+    table
       td{
         border: solid;
-        padding: 2em;
+        padding: .5em;
+        /* margin: .5em; */
+        font-size: 3em;
       }
     </style>
   </head>
@@ -15,13 +18,25 @@
     <div class="array">
       <table id="array1">
       </table>
+      <p>If the box and text turns red, there was a collision for that addition.</p>
     </div>
     <h2>Give a number!</h2>
-    <input type="text" id="numInput" size="20">
+    <input type="text" id="numInput" size="23">
     <div class="buttons">
       <button type="button" name="button" onclick="inputNumber()">Insert Number!</button>
       <button type="button" name="button" onclick="resetAlgo()">Restart It!</button>
     </div>
+    <h2>The Function</h2>
+    <p>The Hash Function with collisions formula is:</p>
+    <p><strong><em>h</em>(k,i) = <em>h<sub>1</sub></em>(k) + i[<em>h<sub>2</sub></em>(k)] mod 16</strong></p>
+    <p>
+      where,
+      <ul>
+        <li><p><strong><em>h<sub>1</sub></em>(k)</strong> = (k mod 16)</p></li>
+        and
+        <li><p><strong><em>h<sub>2</sub></em>(k)</strong> = (2 (k mod 4) + 1)</p></li>
+      </ul>
+    </p>
     <script type="text/javascript">
       var n = 16;
       var table = document.getElementById("array1");
@@ -35,10 +50,17 @@
 
       var data = row.childNodes;
 
+      function resetColor(){
+        for(var ind = 0; ind < n; ind++){
+          data[ind].style.color = "black";
+        }
+      }
+
       function inputNumber(){
         var index = 0;
         var inp = 0;
         var working = true;
+
         inp = parseInt(document.getElementById("numInput").value);
         while(working){
           hashedNum = mainHash(inp, index);
@@ -47,6 +69,7 @@
             data[hashedNum].innerHTML = inp;
             working = false;
           }else{
+            data[hashedNum].style.color = "red";
             index++;
             if(index >= n){
               resetAlgo();
@@ -57,6 +80,8 @@
       }
 
       function resetAlgo(){
+        resetColor();
+
         for(var ind = 0; ind < n; ind++){
           data[ind].innerHTML = null;
         }
