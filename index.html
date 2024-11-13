@@ -1,40 +1,198 @@
 <!DOCTYPE html>
-<html lang="en" dir="ltr">
-  <head>
-    <meta charset="utf-8">
-    <title>Noah Jaccard's Portfolio</title>
-    <link rel="stylesheet" href="css/style.css">
-  </head>
+<html lang="en">
 
-  <body id="index">
-    <header>
-      <h1>Noah Jaccard's Website</h1>
-      <h2 id="title">A Brief Description of Noah</h2>
-      <p id="desc">Noah Jaccard is a computer science graduate from the University of Miami who also studied Maths. With his background in Math he is able to understand algotrithms better for his focus, IT, and through his background in business, he is capable of noticing succesful ideas in the computer science field. He was a brother of Lambda Chi Alpha and Alpha Kappa Psi Business Fraternity back in college. In AKPsi (Alpha Kappa Psi) he developes his leadership skills and all the business skills he might have missed out from not being apart of the Miami Herbert Business School. He has a passion for coffee and all things coffee related. He became the Front of House Manager for Brewbike, A coffee stand/bike company that went under right after he graduated back in 2022. Other things Noah is passionate about are American Sign Langauge, creative computer projects, swimming, developing friendships, sewing, running, and take life a day at a time. Noah now works as a User Support Specialist at OTJ Architects in the heart of our nation, Washington, D.C. Noah also has an intense love for Apple products and tries to save up each and every two years to buy all the new and cool releases Apple announces to the world.</p>
-    
-      <div class="iframe-container">
-        <iframe src="https://editor.p5js.org/noahfjaccard/full/DxD1FPhZv" width="600" height="600"></iframe>
-      </div>
-    </header>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/3.5.0/remixicon.min.css">
+    <link rel="stylesheet" href="style.css">
+    <title>Noah Jaccard</title>
+</head>
+
+<body>
 
     <nav>
-      <ul>
-        <li><a href="index.html">Home</a></li>
-        <!--<li><a href="sites/resume.html">Resume</a></li>-->
-        <!--<li><a href="sites/friends.html">Friends</a></li>-->
-        <!--<li><a href="sites/journal.html">Journal</a></li>-->
-        <li><a href="proj1/js-Proj1a.html">Project 1a</a></li>
-        <li><a href="proj1/js-Proj1b.html">Project 1b</a></li>
-        <li><a href="proj2/js-proj2.html">Project 2</a></li>
-        <li><a href="proj3/js-proj3.html">Project 3</a></li>
-      </ul>
+        <div class="nav-logo">
+            <a href="#">
+                <img src="images/logo.png">
+            </a>
+        </div>
+
+        <ul class="nav-links">
+            <li class="link"><a href="#">Home</a></li>
+            <li id="link1" class="link"><a href="#">Features</a></li>
+            <li id="link2" class="link"><a href="#">Pricing</a></li>
+            <li id="link3" class="link"><a href="#">About</a></li>
+        </ul>
+        <button class="btn">Contact Me</button>
     </nav>
-    <main>
-      <div class="image-container">
-        <img src="img/zenita.jpg" alt="Noah standing on the beach with his Burnt Orange 2009 Jeep Wrangler Ultimate, Zenita">
-        <p class="center-text">I think I am kind-of cool.</p>
-      </div>
-    </main>    
-    <footer><p>All of this content is reserved to Noah Jaccard.</p></footer>
-  </body>
+
+    <header class="container">
+        <div class="content">
+            <span class="blur"></span>
+            <span class="blur"></span>
+            <h4>CREATE YOUR SITE LIKE A PRO</h4>
+            <H1>Hi, I'm <span>Noah</span>, IT Project Coordinator</H1>
+            <p>
+                Currently, you can find me working at OTJ Architects automating their BIM and financial processes. I am also currently enrolled in a masters program at UMD for my M.S. in Cloud Computing.
+            </p>
+            <button class="btn">Connect With Me</button>
+        </div>
+        <div class="image">
+            <img src="images/header.png">
+        </div>
+    </header>
+
+    <section class="container">
+        <h2 class="header">MY HIGHLIGHTS</h2>
+        <div class="features">
+            <div class="card">
+                <span><i class="ri-money-dollar-box-line"></i></span>
+                <h4>API Development</h4>
+                <p>
+                    I build custom API solutions for organization's unique needs.
+                </p>
+                <a href="#">Hire Me <i class="ri-arrow-right-line"></i></a>
+            </div>
+            <div class="card">
+                <span><i class="ri-bug-line"></i></span>
+                <h4>I'm Gay</h4>
+                <p>
+                    With the impending doom of our 47th predsident, felt like I should say that.
+                </p>
+                <a href="#">That's Nice <i class="ri-arrow-right-line"></i></a>
+            </div>
+            <div class="card">
+                <span><i class="ri-history-line"></i></span>
+                <h4>Decent Photoshop Skill</h4>
+                <p>
+                    I make really semi-pretty instagram posts! (link below)
+                </p>
+                <a href="#">Uh Okay <i class="ri-arrow-right-line"></i></a>
+            </div>
+            <div class="card">
+                <span><i class="ri-shake-hands-line"></i></span>
+                <h4>Cooperation</h4>
+                <p>
+                    You want we worrk together? Write an email to me, I might read it.
+                </p>
+                <a href="#">Email Me <i class="ri-arrow-right-line"></i></a>
+            </div>
+        </div>
+    </section>
+
+    <section class="container">
+        <h2 class="header">DONATE ME MONEY</h2>
+        <p class="sub-header">
+            You will quite literally get nothing out of it, but it is kind-of funny to ask you for money randomly online...
+        </p>
+        <div class="pricing">
+            <div class="card">
+                <div class="content">
+                    <h4>Basic Plan</h4>
+                    <h3>0$</h3>
+                    <p>
+                        <i class="ri-checkbox-circle-line"></i>
+                        Nothing
+                    </p>
+                    <p>
+                        <i class="ri-checkbox-circle-line"></i>
+                        Nothing x2
+                    </p>
+                </div>
+                <button class="btn">"Free is for me"</button>
+            </div>
+            <div class="card">
+                <div class="content">
+                    <h4>Gay Plan</h4>
+                    <h3>10$</h3>
+                    <p>
+                        <i class="ri-checkbox-circle-line"></i>
+                        Nothing
+                    </p>
+                    <p>
+                        <i class="ri-checkbox-circle-line"></i>
+                        Maybe a kiss
+                    </p>
+                    <p>
+                        <i class="ri-checkbox-circle-line"></i>
+                        Or play me in chess
+                    </p>
+                </div>
+                <button class="btn">"You should charge more!"</button>
+            </div>
+            <div class="card">
+                <div class="content">
+                    <h4>Fag Plan</h4>
+                    <h3>100$</h3>
+                    <p>
+                        <i class="ri-checkbox-circle-line"></i>
+                        I could make you a shitty site
+                    </p>
+                    <p>
+                        <i class="ri-checkbox-circle-line"></i>
+                        Otherwise...
+                    </p>
+                    <p>
+                        <i class="ri-checkbox-circle-line"></i>
+                        My eternal love
+                    </p>
+                    <p>
+                        <i class="ri-checkbox-circle-line"></i>
+                        And Nothing
+                    </p>
+                    <p>
+                        <i class="ri-checkbox-circle-line"></i>
+                        Plenty of that!
+                    </p>
+                </div>
+                <button class="btn">"What a deal!"</button>
+            </div>
+        </div>
+    </section>
+
+    <footer class="container">
+        <span class="blur"></span>
+        <span class="blur"></span>
+        <div class="column">
+            <div class="logo">
+                <img src="images/logo.png">
+            </div>
+            <p>
+                None of these links work, if you thought they did... well, Good Luck Charlie!
+            </p>
+            <div class="socials">
+                <a href="#"><i class="ri-youtube-line"></i></a>
+                <a href="#"><i class="ri-instagram-line"></i></a>
+                <a href="#"><i class="ri-twitter-line"></i></a>
+            </div>
+        </div>
+        <div class="column">
+            <h4>Company</h4>
+            <a href="#">Business</a>
+            <a href="#">Partnership</a>
+            <a href="#">Network</a>
+        </div>
+        <div class="column">
+            <h4>About Us</h4>
+            <a href="#">Blogs</a>
+            <a href="#">Channels</a>
+            <a href="#">Sponsors</a>
+        </div>
+        <div class="column">
+            <h4>Contact</h4>
+            <a href="#">Contact Us</a>
+            <a href="#">Privicy Policy</a>
+            <a href="#">Terms & Conditions</a>
+        </div>
+    </footer>
+
+    <div class="copyright">
+        Copyright © 2024 Noah Jaccard. All Rights Reserved.
+    </div>
+
+
+    <script src="script.js"></script>
+</body>
+
 </html>
